@@ -17,13 +17,17 @@ addForm.addEventListener("submit", (e) => {
   e.preventDefault();
   id += 1;
   let todo = todoInput.value;
-  todoInput.value = "";
   let status = false;
-  todos.push({ id, todo, status });
-  createHtmlTodo(id, todo, status, list);
-  localStorage.setItem("id", id);
-  localStorage.setItem("list", JSON.stringify(todos));
-  counter(todos);
+  if (todo && todo.trim().length > 0) {
+    todos.push({ id, todo, status });
+    todoInput.value = "";
+    createHtmlTodo(id, todo, status, list);
+    localStorage.setItem("id", id);
+    localStorage.setItem("list", JSON.stringify(todos));
+    counter(todos);
+  } else {
+    alert("please enter something");
+  }
 });
 
 //edit todo

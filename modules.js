@@ -88,15 +88,20 @@ function editTodo(editBtn, todoId) {
 
 function saveTodo(saveBtn, todoId, todos) {
   let todoText = saveBtn.previousSibling;
-  let index = todos.findIndex((todo) => todo.id == todoId);
-  if (index == -1) {
-    alert("There is task to be edited");
+  let text = todoText.innerText;
+  if (text && text.trim().length > 0) {
+    let index = todos.findIndex((todo) => todo.id == todoId);
+    if (index == -1) {
+      alert("There is task to be edited");
+    }
+    todos[index].todo = text;
+    saveBtn.innerText = "Edit";
+    saveBtn.classList.replace("save-btn", "edit-btn");
+    todoText.classList.remove("edit-text");
+    todoText.setAttribute("contenteditable", "false");
+  } else {
+    alert("please enter something");
   }
-  todos[index].todo = todoText.innerText;
-  saveBtn.innerText = "Edit";
-  saveBtn.classList.replace("save-btn", "edit-btn");
-  todoText.classList.remove("edit-text");
-  todoText.setAttribute("contenteditable", "false");
 }
 
 // delete todo function
