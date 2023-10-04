@@ -13,12 +13,8 @@
         <h1 class="heading">To Do List</h1>
         <div class="todos-container">
           <div id="start" class="start">Add Your First Task</div>
-          <div id="todos-list" class="todos-list">
-            <!-- genetated todo elment -->
-          </div>
-
           <form id="todo-form" class="todo-form" type="submit">
-            <input id="new-todo" class="new-todo" type="text" />
+            <input id="new-todo" class="new-todo" type="text" required />
             <input
               id="add-btn"
               type="submit"
@@ -26,10 +22,22 @@
               class="add-btn"
             />
           </form>
+          <div id="todos-list" class="todos-list">
+            <!-- genetated todo elment -->
+          </div>
+          <div id="filter-btns" class="filter-btns">
+            <select name="filter" id="filter">
+              <option value="all">All</option>
+              <option value="completed">Completed</option>
+              <option value="active">Active</option>
+            </select>
+          </div>
+
           <div id="counter" class="counter"></div>
         </div>
       </div>
     </div>
+    <script src="modules.js"></script>
     <script src="index.js"></script>
   </body>
 </html>

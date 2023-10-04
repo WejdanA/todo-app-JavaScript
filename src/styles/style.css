@@ -58,6 +58,9 @@ h1 {
 
 .new-todo {
   width: 100%;
+  background-color: #fdf0f0;
+  border: none;
+  border-radius: 5px;
 }
 
 .todo-text.completed {
@@ -70,6 +73,7 @@ h1 {
   justify-content: space-between;
   align-self: stretch;
   width: 100%;
+  margin-top: 1rem;
 }
 
 #todos-list {
@@ -78,14 +82,13 @@ h1 {
 
 div .todo-text {
   overflow-wrap: break-word;
-  width: 300px;
+  width: 50%;
   color: #f1b4bb;
 }
 
 button {
   align-self: center;
   height: fit-content;
-  padding: 0.2rem;
 }
 
 form {
@@ -97,4 +100,23 @@ form {
 
 .counter {
   font-size: 1.2rem;
+}
+
+div .edit-text {
+  border-radius: 5px;
+  background-color: #fdf0f0;
+  color: #132043;
+}
+
+button,
+.add-btn {
+  border: none;
+  background: none;
+  color: #f1b4bb;
+  font-size: 1rem;
+}
+
+button:hover,
+.add-btn:hover {
+  color: #fdf0f0;
 }
