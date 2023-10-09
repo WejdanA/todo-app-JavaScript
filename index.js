@@ -1,11 +1,13 @@
 let id = -1; // todo id
 let todos = [];
 
-const todoInput = document.getElementById("new-todo");
 const start = document.getElementById("start");
-const list = document.getElementById("todos-list");
+const todoInput = document.getElementById("new-todo");
 const addForm = document.getElementById("todo-form");
+const list = document.getElementById("todos-list");
 const filterMenue = document.getElementById("filter");
+const searchInput = document.getElementById("search-term");
+const searchForm = document.getElementById("search-form");
 
 //  list all exiciting todos
 if (localStorage.getItem("list")) {
@@ -68,4 +70,12 @@ list.addEventListener("change", (e) => {
 filterMenue.addEventListener("click", (e) => {
   let option = e.target.value;
   filterList(option, todos);
+});
+
+// search
+
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let term = searchInput.value;
+  let results = search(term, todos, list);
 });

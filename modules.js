@@ -126,3 +126,13 @@ function counter(todos) {
   const counter = document.getElementById("counter");
   counter.innerText = `completed tasks: ${completed} out of ${todos.length}`;
 }
+
+// search
+function search(term, todos, list) {
+  let searchResults = todos.filter((todo) =>
+    todo.todo.toLowerCase().includes(term.toLowerCase())
+  );
+  console.log(searchResults);
+
+  listTodos(searchResults, list);
+}
